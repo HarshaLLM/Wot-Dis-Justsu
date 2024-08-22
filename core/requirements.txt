@@ -1,0 +1,11 @@
+langchain
+langchain_community
+langchain_chroma
+langchain_core
+langchain_ollama
+bs4
+requests
+ollama
+tensorflow
+torch
+fastapi
