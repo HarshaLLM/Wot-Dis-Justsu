@@ -1,0 +1,118 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #2c2c2c, #484848);
+    display: grid;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+/*app container*/
+.App {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+/* gotta make sure that window takes up entire screen */
+.chat-window {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/*header at the top*/
+.chat-header {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 80%;
+}
+
+/* naive scrolling for now */
+.chat-body {
+    padding: 1rem;
+    overflow-y: auto; /* scrolling */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* messages displahed */
+.message {
+    max-width: 80%;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #333;
+    color: white;
+}
+
+.ai-message {
+    align-self: flex-start;
+    background-color: #555;
+    color: white;
+}
+
+/*fix input fields at the bottom*/
+.chat-input {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    padding: 1rem;
+    background-color: #000;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #333;
+    color: white;
+    margin-right: 1rem;
+}
+
+.chat-input button {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ff9800;
+    color: black;
+    cursor: pointer;
+}
+
+/* the loading animation -> change later to something fancy*/
+.typing-animation .message-text {
+    font-style: italic;
+    opacity: 0.8;
+    animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
